@@ -2,17 +2,27 @@ package PlantHotel;
 
 public class PlantPalm extends Plant implements PlantFeeding{
 
+    protected double foodAmountBase = 0.5; // 0.5 l liquid/meter
     public PlantPalm(String name, double length) {
-        super(name, length); // polymorfism
+                super(name, length); // polymorfism
     }
 
+    // getters & setters
+    public double getFoodAmountBase() {
+        return foodAmountBase;
+    }
+    public void setFoodAmountBase(double foodAmountBase) {
+        this.foodAmountBase = foodAmountBase;
+    }
+
+    // METHOD-overrides
     @Override
     public String getFoodType() {
         return FoodType.PALM.food; // enum
     }
     @Override
     public double getFeedingAmount() {
-        return 0.5 * getLength();   // Palm 0.5 l liquid/meter
+        return getFoodAmountBase() * getLength();
     }
     @Override
     public String getFeedingMethod() {
