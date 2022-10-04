@@ -6,12 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlantCactusTest {
 
-    PlantCactus ett = new PlantCactus("Ett", 0.2);
+    PlantCactus c = new PlantCactus("CactusTest", 0.2);
 
+    // 0.2 cl liquid/plant
     @Test
     public void getFeedingAmountTest() {
-        assert(ett.getFeedingAmount() == 0.2);
-        ett.setFoodAmountBase(0.5);
-        assert (ett.getFoodAmountBase() != 0.2);
+        assert(c.getFeedingAmount() == 0.2);
+        c.setFoodAmountBase(0.5);
+        assert (c.getFoodAmountBase() != 0.2);
+        assert (c.getFoodAmountBase() == 0.5);
     }
 }
