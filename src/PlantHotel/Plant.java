@@ -1,7 +1,7 @@
 package PlantHotel;
 
 public abstract class Plant {
-    private String name;
+    private String name;// encapsulation. private var.
     private double length; // meter
 
     public Plant(String name, double length) {
@@ -15,7 +15,7 @@ public abstract class Plant {
 
     public void setName(String name) { // inkapsling
         this.name = name;
-    }
+    } // encapsulation
 
     public double getLength() {
         return length;
