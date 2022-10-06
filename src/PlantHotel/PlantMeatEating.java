@@ -32,7 +32,7 @@ public class PlantMeatEating extends Plant implements PlantFeeding{
         return getFoodAmountBase() + (getFoodAmountPerMeter() * getLength()); // 0.1 l base + 0.2 l/m extra
     }
     @Override
-    public String getFeedingMethod() {
+    public String getFeedingMethod() {      // use of interface
         return String.format("Feed %s %s L of %s daily.",
                 getName(), getFeedingAmount(), getFoodType());
     }

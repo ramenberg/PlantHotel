@@ -17,15 +17,15 @@ public class PlantPalm extends Plant implements PlantFeeding{
 
     // METHOD-overrides
     @Override
-    public String getFoodType() {
-        return FoodType.PALM.food; // enum
+    public String getFoodType() {       // enum
+        return FoodType.PALM.food;
     }
     @Override
     public double getFeedingAmount() {
         return getFoodAmountBase() * getLength();
     }
     @Override
-    public String getFeedingMethod() {
+    public String getFeedingMethod() {      // use of interface
         return String.format("Feed %s %s L of %s daily.",
                 getName(), getFeedingAmount(), getFoodType());
     }

@@ -26,7 +26,7 @@ public class PlantCactus extends Plant implements PlantFeeding{
         return getFoodAmountBase();
     }
     @Override
-    public String getFeedingMethod() {
+    public String getFeedingMethod() {      // use of interface
         return String.format("Feed %s %s cl of %s daily.",
                 getName(), getFeedingAmount(), getFoodType());
     }
