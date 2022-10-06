@@ -15,7 +15,7 @@ public abstract class Plant {
 
     public void setName(String name) { // inkapsling
         this.name = name;
-    } // encapsulation
+    }
 
     public double getLength() {
         return length;
