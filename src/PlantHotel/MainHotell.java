@@ -2,8 +2,8 @@ package PlantHotel;
 
 import javax.swing.*;
 
-public class Main{
-    public Main() {
+public class MainHotell {
+    protected MainHotell() {
         PlantCactus Igge = new PlantCactus("Igge", 0.2);
         PlantPalm Laura = new PlantPalm("Laura", 5.0);
         PlantPalm Putte = new PlantPalm("Putte", 1.0);
@@ -28,6 +28,6 @@ public class Main{
         }
     }
     public static void main(String[] args) {
-        Main hotell = new Main();
+        MainHotell hotell = new MainHotell();
     }
 }
