@@ -18,7 +18,7 @@ public class MainHotell {
                 String input = JOptionPane.showInputDialog("Which plant should be fed? ");
                 int count = 0;
                 for (Plant p : plantsAtHotel) {
-                    if (input.equalsIgnoreCase(p.getName())) {
+                    if (input.trim().equalsIgnoreCase(p.getName())) {
                         JOptionPane.showMessageDialog(null, p.getFeedingMethod());
                         count++;
                         break;
