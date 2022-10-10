@@ -1,6 +1,6 @@
 package PlantHotel;
 
-public abstract class Plant {
+public abstract class Plant implements PlantFeeding {
     private String name;// encapsulation. private var.
     private double length; // meter
 

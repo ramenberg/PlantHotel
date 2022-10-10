@@ -1,6 +1,6 @@
 package PlantHotel;
 
-public class PlantPalm extends Plant implements PlantFeeding{
+public class PlantPalm extends Plant{
 
     protected double foodAmountBase = 0.5; // 0.5 l liquid/meter
     public PlantPalm(String name, double length) {
@@ -25,7 +25,7 @@ public class PlantPalm extends Plant implements PlantFeeding{
         return getFoodAmountBase() * getLength();
     }
     @Override
-    public String getFeedingMethod() {      // use of interface
+    public String getFeedingMethod() {      // POLYMORFISM
         return String.format("Feed %s %s L of %s daily.",
                 getName(), getFeedingAmount(), getFoodType());
     }

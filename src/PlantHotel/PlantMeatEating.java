@@ -1,6 +1,6 @@
 package PlantHotel;
 
-public class PlantMeatEating extends Plant implements PlantFeeding{
+public class PlantMeatEating extends Plant{
     protected double foodAmountBase = 0.1;
     protected double foodAmountPerMeter = 0.2; // extra 0.2 l per meter
     public PlantMeatEating(String name, double length) {
@@ -28,7 +28,7 @@ public class PlantMeatEating extends Plant implements PlantFeeding{
         return FoodType.MEAT_EATING.food; // enum
     }
     @Override
-    public double getFeedingAmount() {
+    public double getFeedingAmount() { // POLYMORFISM
         return getFoodAmountBase() + (getFoodAmountPerMeter() * getLength()); // 0.1 l base + 0.2 l/m extra
     }
     @Override

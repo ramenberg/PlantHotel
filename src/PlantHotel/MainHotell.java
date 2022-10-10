@@ -1,30 +1,36 @@
 package PlantHotel;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainHotell {
-    protected MainHotell() {
-        PlantCactus Igge = new PlantCactus("Igge", 0.2);
-        PlantPalm Laura = new PlantPalm("Laura", 5.0);
-        PlantPalm Putte = new PlantPalm("Putte", 1.0);
-        PlantMeatEating Meatloaf = new PlantMeatEating("Meatloaf", 0.7);
+    public MainHotell() {
 
-        String planta = JOptionPane.showInputDialog("Which plant should be fed? ");
+        List<Plant> plantsAtHotel = new ArrayList<>();
+        plantsAtHotel.add(0, new PlantCactus("Igge", 0.2));
+        plantsAtHotel.add(1, new PlantPalm("Laura", 5.0));
+        plantsAtHotel.add(2, new PlantPalm("Putte", 1.0));
+        plantsAtHotel.add(3, new PlantMeatEating("Meatloaf", 0.7));
 
-        try {
-            if (planta.equalsIgnoreCase("igge")) {
-                JOptionPane.showMessageDialog(null, Igge.getFeedingMethod());
-            } else if (planta.equalsIgnoreCase("laura")) {
-                JOptionPane.showMessageDialog(null, Laura.getFeedingMethod());
-            } else if (planta.equalsIgnoreCase("putte")) {
-                JOptionPane.showMessageDialog(null, Putte.getFeedingMethod());
-            } else if (planta.equalsIgnoreCase("meatloaf")) {
-                JOptionPane.showMessageDialog(null, Meatloaf.getFeedingMethod());
-            } else
-                JOptionPane.showMessageDialog(null, "No plant with that name exists. ");
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null,"No plant specified. Program exit. ");
-            System.exit(1);
+        while (true) {
+            try {
+                String input = JOptionPane.showInputDialog("Which plant should be fed? ");
+                int count = 0;
+                for (Plant p : plantsAtHotel) {
+                    if (input.equalsIgnoreCase(p.getName())) {
+                        JOptionPane.showMessageDialog(null, p.getFeedingMethod());
+                        count++;
+                        break;
+                    }
+                }
+                if (count == 0)
+                    JOptionPane.showMessageDialog(null, "No plant with that name" +
+                            " is currently at the hotel. ");
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, "Thank you for using the feeding program. ");
+                System.exit(0);
+            }
         }
     }
     public static void main(String[] args) {
