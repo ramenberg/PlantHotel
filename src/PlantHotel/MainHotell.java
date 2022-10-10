@@ -8,10 +8,10 @@ public class MainHotell {
     public MainHotell() {
 
         List<Plant> plantsAtHotel = new ArrayList<>();
-        plantsAtHotel.add(0, new PlantCactus("Igge", 0.2));
-        plantsAtHotel.add(1, new PlantPalm("Laura", 5.0));
-        plantsAtHotel.add(2, new PlantPalm("Putte", 1.0));
-        plantsAtHotel.add(3, new PlantMeatEating("Meatloaf", 0.7));
+        plantsAtHotel.add(new PlantCactus("Igge", 0.2));
+        plantsAtHotel.add(new PlantPalm("Laura", 5.0));
+        plantsAtHotel.add(new PlantPalm("Putte", 1.0));
+        plantsAtHotel.add(new PlantMeatEating("Meatloaf", 0.7));
 
         while (true) {
             try {
